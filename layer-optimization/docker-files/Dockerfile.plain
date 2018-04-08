@@ -1,0 +1,6 @@
+FROM scratch
+LABEL maintainer=Ulrich
+ADD openSUSE-Leap-42.3.base.x86_64.tar.xz /
+RUN zypper ref
+RUN zypper up
+RUN zypper clean -a
