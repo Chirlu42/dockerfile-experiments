@@ -4,9 +4,8 @@ prox=""
 
 result=`ping -c 1 16.46.16.11 | grep "1 received"`
 
-if [ $result!="" ];
-    then
-        prox="--build-arg http_proxy=http://16.46.16.11:8080"
+if [ "$result"!="" ];  then
+    prox="--build-arg http_proxy=http://16.46.16.11:8080"
 fi
 
 
@@ -16,8 +15,8 @@ docker build $prox  --squash -t opensuse-plain-squashed -f docker-files/plain.Do
 docker build $prox  -t opensuse-jdk-suse-unsquashed -f docker-files/openjdk-suse.Dockerfile .
 docker build $prox  --squash -t opensuse-jdk-suse-squashed -f docker-files/openjdk-suse.Dockerfile .
 
-#docker build $prox  -t opensuse-jdk-head-unsquashed -f docker-files/openjdk-head.Dockerfile .
-#docker build $prox  --squash -t opensuse-jdk-head-squashed -f docker-files/openjdk-head.Dockerfile .
+docker build $prox  -t opensuse-jdk-head-unsquashed -f docker-files/openjdk-head.Dockerfile .
+docker build $prox  --squash -t opensuse-jdk-head-squashed -f docker-files/openjdk-head.Dockerfile .
 
-#docker build $prox  -t opensuse-jdk-zulu-unsquashed -f docker-files/openjdk-zulu.Dockerfile .
-#docker build $prox  --squash -t opensuse-jdk-zulu-squashed -f docker-files/openjdk-zulu.Dockerfile .
+docker build $prox  -t opensuse-jdk-zulu-unsquashed -f docker-files/openjdk-zulu.Dockerfile .
+docker build $prox  --squash -t opensuse-jdk-zulu-squashed -f docker-files/openjdk-zulu.Dockerfile .
