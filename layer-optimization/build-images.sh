@@ -9,23 +9,23 @@ if [ "$result"!="" ];  then
 fi
 
 
-docker build $prox -t opensuse-plain-unsquashed -f docker-files/plain.Dockerfile .
-docker build $prox  --squash -t opensuse-plain-squashed -f docker-files/plain.Dockerfile .
+docker build $prox -t opensuse-1-plain-unsquashed -f docker-files/plain.Dockerfile .
+docker build $prox  --squash -t opensuse-1-plain-squashed -f docker-files/plain.Dockerfile .
 
-docker build $prox -t opensuse-plain+security-unsquashed -f docker-files/plain+security.Dockerfile .
-docker build $prox  --squash -t opensuse-plain+security-squashed -f docker-files/plain+security.Dockerfile .
+docker build $prox -t opensuse-2-plain-security-unsquashed -f docker-files/plain+security.Dockerfile .
+docker build $prox  --squash -t opensuse-2-plain-security-squashed -f docker-files/plain+security.Dockerfile .
 
-docker build $prox -t opensuse-plain+timezone-unsquashed -f docker-files/plain+timezone.Dockerfile .
-docker build $prox  --squash -t opensuse-plain+timezone-squashed -f docker-files/plain+timezone.Dockerfile .
+docker build $prox -t opensuse-3-plain-timezone-unsquashed -f docker-files/plain+timezone.Dockerfile .
+docker build $prox  --squash -t opensuse-3-plain-timezone-squashed -f docker-files/plain+timezone.Dockerfile .
 
-docker build $prox -t opensuse-base-unsquashed -f docker-files/base.Dockerfile .
-docker build $prox  --squash -t opensuse-base-squashed -f docker-files/base.Dockerfile .
+docker build $prox -t opensuse-4-base-unsquashed -f docker-files/base.Dockerfile .
+docker build $prox  --squash -t opensuse-4-base-squashed -f docker-files/base.Dockerfile .
 
-docker build $prox  -t opensuse-jdk-suse-unsquashed -f docker-files/openjdk-suse.Dockerfile .
-docker build $prox  --squash -t opensuse-jdk-suse-squashed -f docker-files/openjdk-suse.Dockerfile .
+docker build $prox  -t opensuse-6-jdk-suse-unsquashed -f docker-files/openjdk-suse.Dockerfile .
+docker build $prox  --squash -t opensuse-6-jdk-suse-squashed -f docker-files/openjdk-suse.Dockerfile .
 
-docker build $prox  -t opensuse-jdk-head-unsquashed -f docker-files/openjdk-head.Dockerfile .
-docker build $prox  --squash -t opensuse-jdk-head-squashed -f docker-files/openjdk-head.Dockerfile .
+docker build $prox  -t opensuse-5-jdk-head-unsquashed -f docker-files/openjdk-head.Dockerfile .
+docker build $prox  --squash -t opensuse-5-jdk-head-squashed -f docker-files/openjdk-head.Dockerfile .
 
-docker build $prox  -t opensuse-jdk-zulu-unsquashed -f docker-files/openjdk-zulu.Dockerfile .
-docker build $prox  --squash -t opensuse-jdk-zulu-squashed -f docker-files/openjdk-zulu.Dockerfile .
+docker build $prox  -t opensuse-7-jdk-zulu-unsquashed -f docker-files/openjdk-zulu.Dockerfile .
+docker build $prox  --squash -t opensuse-7-jdk-zulu-squashed -f docker-files/openjdk-zulu.Dockerfile .
