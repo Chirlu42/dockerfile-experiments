@@ -9,8 +9,13 @@ if [ "$result"!="" ];  then
 fi
 
 
-docker build $prox -t opensuse-1-plain-unsquashed -f docker-files/plain.Dockerfile .
-docker build $prox  --squash -t opensuse-1-plain-squashed -f docker-files/plain.Dockerfile .
+#: <<'end_long_comment'
+
+docker build $prox -t opensuse-1a-plain-no-a-unsquashed -f docker-files/plain.Dockerfile .
+docker build $prox  --squash -t opensuse-1a-plain-no-a-squashed -f docker-files/plain.Dockerfile .
+
+docker build $prox -t opensuse-1b-plain-with-a-unsquashed -f docker-files/plain+a.Dockerfile .
+docker build $prox  --squash -t opensuse-1b-plain-with-a-squashed -f docker-files/plain+a.Dockerfile .
 
 docker build $prox -t opensuse-2-plain-security-unsquashed -f docker-files/plain+security.Dockerfile .
 docker build $prox  --squash -t opensuse-2-plain-security-squashed -f docker-files/plain+security.Dockerfile .
@@ -27,5 +32,10 @@ docker build $prox  --squash -t opensuse-6-jdk-suse-squashed -f docker-files/ope
 docker build $prox  -t opensuse-5-jdk-head-unsquashed -f docker-files/openjdk-head.Dockerfile .
 docker build $prox  --squash -t opensuse-5-jdk-head-squashed -f docker-files/openjdk-head.Dockerfile .
 
-docker build $prox  -t opensuse-7-jdk-zulu-unsquashed -f docker-files/openjdk-zulu.Dockerfile .
-docker build $prox  --squash -t opensuse-7-jdk-zulu-squashed -f docker-files/openjdk-zulu.Dockerfile .
+docker build $prox  -t opensuse-7-jdk-zulu-rpm-unsquashed -f docker-files/openjdk-zulu-rpm.Dockerfile .
+docker build $prox  --squash -t opensuse-7-jdk-zulu-rpm-squashed -f docker-files/openjdk-zulu-rpm.Dockerfile .
+
+docker build $prox  -t opensuse-8-jdk-zulu-zyp-unsquashed -f docker-files/openjdk-zulu-zyp.Dockerfile .
+docker build $prox  --squash -t opensuse-8-jdk-zulu-zyp-squashed -f docker-files/openjdk-zulu-zyp.Dockerfile .
+
+#end_long_comment
